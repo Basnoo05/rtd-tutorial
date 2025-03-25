@@ -21,4 +21,10 @@ Contents
    usage
    api
    signin
+   signup
+   subjectselection
+   homepage
+   profile
+   messages
+   searchpage
    
