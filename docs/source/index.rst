@@ -18,5 +18,6 @@ Contents
 
 .. toctree::
 
-   usage
+   SignIn/Up page
    api
+   
