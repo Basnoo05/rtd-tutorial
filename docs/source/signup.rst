@@ -1,43 +1,25 @@
-Sign Up
-=======
-
-Overview
---------
-
-The sign-up feature allows new users to create an account. This section explains how to implement and use the sign-up functionality.
-
-### Requirements
-
-- **Username and Email**: Unique username and email address.
-- **Password**: Strong password with specific criteria (e.g., length, characters).
-
-### Sign Up Process
-
-1. **Navigate to the Sign Up Page**: Users should go to the designated sign-up page.
-2. **Enter Details**: Input username, email, password, and confirm password.
-3. **Submit Form**: Click the "Sign Up" button to submit the form.
-4. **Verification**: The system sends a verification email to confirm the account.
-
-### Error Handling
-
-- **Duplicate Username or Email**: If the username or email is already in use, an error message is displayed.
-- **Invalid Password**: If the password does not meet the criteria, an error message is displayed.
-
-### API Documentation
-
-If you are implementing the sign-up feature programmatically, refer to the following API endpoints:
-
-.. code-block:: http
-   POST /api/signup HTTP/1.1
-   Content-Type: application/json
-
-   {
-       "username": "your_username",
-       "email": "your_email@example.com",
-       "password": "your_password"
-   }
-
-### Example Code
-
-Here's an example of how to handle sign-up requests in Python using Flask:
-
+/// sign_up.dart
+///
+/// User Sign-Up and Recovery Phrase Module
+///
+/// This module provides the user interface and logic for the sign-up process in the application,
+/// including secure mnemonic (recovery phrase) generation, display, and verification. It guides
+/// the user through a multi-step account creation flow:
+///
+/// 1. **AccountSetup**: Collects username and password.
+/// 2. **WordGeneration**: Generates and displays a secure recovery phrase (using BIP39).
+/// 3. **WordVerification**: Asks the user to re-enter the recovery phrase for confirmation.
+///
+/// Main Classes:
+///   - SignUpPage: Manages the sign-up flow and step transitions.
+///   - AccountSetup: UI for entering username and password.
+///   - WordGeneration: Displays and allows copying of the generated recovery phrase.
+///   - WordVerification: Verifies the user's knowledge of their recovery phrase.
+///
+/// Example usage:
+///   Navigator.push(context, MaterialPageRoute(builder: (_) => const SignUpPage()));
+///
+/// .. note::
+///    The recovery phrase is generated using the `bip39` package with 256-bit strength.
+///    Users must store their recovery phrase securely, as it is required for account recovery.
+///
