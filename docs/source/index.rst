@@ -22,8 +22,8 @@ Contents
    api
    signin
    signup
-   subjectselection
    homepage
+   subjectselection
    profile
    messages
    searchpage
