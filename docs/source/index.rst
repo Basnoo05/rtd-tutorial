@@ -28,4 +28,5 @@ Contents
    profile
    messages
    searchpage
+   settingspage
    
