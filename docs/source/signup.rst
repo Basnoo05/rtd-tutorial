@@ -56,7 +56,7 @@ This module does not directly interact with a backend API for registration, but 
        "recovery_phrase": "generated_mnemonic_phrase"
    }
 
-Example Code
+Code
 ------------
 
 Below is a simplified example of how the sign-up process is structured in Flutter:
