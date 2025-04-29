@@ -399,9 +399,5 @@ Best Practices
 - **No Password Confirmation Field**: Consider omitting the password confirmation for even less friction, using a password visibility toggle instead.
 - **Social Proof**: Optionally, add testimonials or security assurances to further increase user trust.
 
-References
-----------
 
-- `bip39` package documentation for mnemonic generation
-- Best Practices for Sign-Up Forms
 
