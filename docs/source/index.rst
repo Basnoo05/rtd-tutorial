@@ -22,6 +22,7 @@ Contents
    api
    signin
    signup
+   recovery
    homepage
    subjectselection
    profile
