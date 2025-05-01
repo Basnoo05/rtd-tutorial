@@ -1,4 +1,4 @@
-Chat Module
+Chat Page
 ===========
 
 Documentation
