@@ -22,3 +22,4 @@ Contents
    searchpage
    settingspage
    createpostpage
+   editprofilepage
