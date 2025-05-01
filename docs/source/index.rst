@@ -21,4 +21,4 @@ Contents
    chatpage
    searchpage
    settingspage
-   
+   createpostpage
