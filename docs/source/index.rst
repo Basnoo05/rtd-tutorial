@@ -26,7 +26,7 @@ Contents
    homepage
    subjectselection
    profile
-   messages
+   chatpage
    searchpage
    settingspage
    
