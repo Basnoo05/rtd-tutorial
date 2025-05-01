@@ -17,7 +17,7 @@ Contents
    recovery
    homepage
    subjectselection
-   profile
+   profilepage
    chatpage
    searchpage
    settingspage
