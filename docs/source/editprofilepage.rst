@@ -1,4 +1,4 @@
-Edit Profile Module
+Edit Profile
 ===================
 
 Documentation
