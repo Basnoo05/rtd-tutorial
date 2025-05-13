@@ -208,11 +208,3 @@ Dependencies
 - `image_picker`: Media file handling.
 - `notifier.dart`, `config.dart`: Application configuration and state.
 
-References
-----------
-
-- Dart Async Programming Guide
-- REST API Best Practices
-- WebSocket Protocol Specification
-- Flutter/Dart Documentation
-
