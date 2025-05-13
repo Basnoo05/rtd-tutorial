@@ -39,7 +39,7 @@ Maintenance
 - The `SignInFormWidget` handles user input for username and password, including validation and password visibility.
 - The `_handleSignIn` method in `_SignInPageState` retrieves the input, calls the authentication engine, and updates the UI based on the result.
 - Error messages are shown using a `SnackBar` if authentication fails.
-- The design follows Flutter's best practices for stateful widgets and form validation[2][3][6].
+- The design follows Flutter's best practices for stateful widgets and form validation.
 
 API Documentation
 -----------------
@@ -57,7 +57,7 @@ While the current implementation uses a local authentication engine, a typical A
    }
 
 
-Best Practices
+Features
 --------------
 
 - **Simple and Clear UI**: Only essential fields are shown to minimize friction.
