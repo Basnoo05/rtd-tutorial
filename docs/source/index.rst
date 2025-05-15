@@ -16,7 +16,6 @@ Contents
    signup
    recovery
    homepage
-   subjectselection
    profilepage
    chatpage
    searchpage
