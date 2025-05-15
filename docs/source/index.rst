@@ -19,6 +19,7 @@ Contents
    feedpage
    profilepage
    settingspage
+   schedulepage
    createpostpage
    editprofilepage
    engine
