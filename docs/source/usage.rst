@@ -1,34 +1,32 @@
 Usage
 =====
 
-.. _installation:
+#  Setup
+1. Clone the Repo
+```bash
+git clone https://github.com/studbudz/studbudz.git
+cd studbudz
+flutter pub get
+```
 
-Installation
-------------
+2. Get Your IP Address
+```bash
+Windows: ipconfig → Look for IPv4 Address
+macOS: ifconfig → Look for inet under en0
+Linux: hostname -I
+```
+3. Update Config
+Edit config.dart with your IP:
+```
+const String apiUrl = 'http://192.168.X.X:8080'; // Replace with your IP
+```
+4. Run the App
+    1. Create 2 terminals
+    2. cd server -> dart run
+    3. cd studbudz -> flutter run
 
-To use Lumache, first install it using pip:
+flutter run
+✅ Troubleshooting
 
-.. code-block:: console
-
-   (.venv) $ pip install lumache
-
-Creating recipes
-----------------
-
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
-
+Ensure device and server are on the same network.
+Check firewall settings for port 8080.
