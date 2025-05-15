@@ -26,6 +26,30 @@ Typical user flow:
 5. Taps the settings icon to access account settings.
 6. Scrolls through the grid of posts.
 
+Backend Integration Details
+--------------------------
+
+The Profile Page is deeply integrated with the backend for all user data operations:
+
+- **Profile Data Fetching**:  
+  On page load, the frontend calls `Controller().engine.getUserProfile(userID: ...)`, which sends a request to the backend to retrieve the user’s profile data and posts.  
+  - The backend fetches user info, avatar URL, bio, follower count, and posts from the database (:doc:`server`, :doc:`sqlhandler`).
+  - The avatar is downloaded from the backend using the media endpoint (:doc:`engine`, :doc:`httprequesthandler`).
+
+- **Editing Profile**:  
+  When the user edits their profile, the frontend sends the updated name and bio to the backend, which updates the database and returns the new data on success.
+
+- **Follow/Unfollow**:  
+  The follow/unfollow buttons trigger requests to the backend to update the relationship between users.  
+  - The backend updates the follow relationship and returns the new follower count (:doc:`server`, :doc:`sqlhandler`).
+
+- **Posts Retrieval**:  
+  The user’s posts are dynamically loaded from the backend and displayed in a grid.  
+  - The backend returns a list of post metadata and media URLs, which are then fetched and displayed by the frontend.
+
+- **Error Handling**:  
+  If any backend request fails (e.g., network error, invalid user, server error), the frontend displays an appropriate error message and ensures the UI remains stable.
+
 Maintenance – How Does the Software Do What It Does?
 ----------------------------------------------------
 
@@ -45,3 +69,10 @@ Maintenance – How Does the Software Do What It Does?
   - Easily add more profile fields or post types.
   - Modular helper methods for stats columns.
 
+Best Practices
+--------------
+
+- **Efficient Data Fetching**: Minimize API calls and use caching where possible.
+- **Error Handling**: Display clear messages for backend errors and handle loading states gracefully.
+- **Security**: All sensitive operations require authentication and are performed over HTTPS.
+- **Extensibility**: Design UI and backend endpoints to support future features (e.g., profile pictures, badges, more post types).
