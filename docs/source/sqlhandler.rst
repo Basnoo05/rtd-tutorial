@@ -1,4 +1,4 @@
-SqlHandler Module
+SQL Handler Module
 =================
 
 Documentation
@@ -58,49 +58,6 @@ Maintenance – How Does the Software Do What It Does?
 3. **Error Handling**:
    - Catches and logs database errors
    - Returns empty results on failure (prevents app crashes)
-
-Comments
---------
-
-### Implementation Comments
-
-.. code-block:: dart
-
-   // Connects to MySQL with default/local credentials
-   _connect({
-     String host = "localhost",
-     int port = 3306,
-     String userName = "root",
-     String password = "",
-     String databaseName = "studbudz",
-   })
-
-   // Loads queries from JSON file (lib/queries.json by default)
-   _loadQueries({String path = "lib/queries.json"})
-
-   // Generic SELECT handler with parameterized queries
-   Future<List<Map<String, dynamic>>> select(String queryKey, [List? params])
-
-### Interface Comments
-
-.. code-block:: dart
-
-   /// Main database handler class
-   /// - Manages connections and query execution
-   class SqlHandler { ... }
-
-   /// Executes SELECT query, returns list of result maps
-   Future<List<Map<String, dynamic>>> select(String queryKey, [List? params])
-
-   /// Executes INSERT, returns number of affected rows
-   Future<int> insert(String queryKey, [List? params])
-
-   /// Executes UPDATE, returns number of affected rows
-   Future<int> update(String queryKey, [List? params])
-
-   /// Executes DELETE, returns number of affected rows
-   Future<int> delete(String queryKey, [List? params])
-
 
 Best Practices
 --------------
