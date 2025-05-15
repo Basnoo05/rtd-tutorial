@@ -83,18 +83,3 @@ Best Practices
    - Reuse group keys for notification threads
    - Test background/foreground states
 
-Future Improvements
--------------------
-
-- Add notification channels configuration
-- Implement deep linking for navigation
-- Add state persistence
-- Support notification actions
-- Integrate with native platform features
-
-Dependencies
-------------
-
-- ``Engine``: Authentication and data handling
-- ``awesome_notifications``: Cross-platform notifications
-- ``config.dart``: Application configuration
