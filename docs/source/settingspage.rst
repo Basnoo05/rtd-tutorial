@@ -9,13 +9,13 @@ The Settings page allows users to manage their account preferences, security set
 Usage
 -----
 
-### Key Features:
+Key Features:
 - **Account Settings**: Manage profile visibility (public/private)
 - **Notification Preferences**: Toggle notification enablement
 - **Account Management**: Delete account or log out
 - **Profile Visibility**: Control who can view the user's profile
 
-### User Flow:
+User Flow:
 1. **Access Settings**: Navigate via app menu or profile icon
 2. **Modify Preferences**:
    - Toggle profile visibility in Account Settings
@@ -24,10 +24,32 @@ Usage
    - Delete account (requires confirmation)
    - Log out of current session
 
+Backend Integration Details
+--------------------------
+
+The Settings page is integrated with the backend for all account management and privacy features:
+
+- **Profile Visibility**:  
+  When a user toggles profile visibility, the frontend sends an update to the backend using the HTTP request handler (:doc:`httprequesthandler`).  
+  - The backend updates the user's profile visibility in the database (:doc:`server`, :doc:`sqlhandler`).
+  - The change is reflected in the user's profile data on subsequent fetches.
+
+- **Account Deletion**:  
+  Deleting an account triggers a backend API call to permanently remove the user's account and all associated data.  
+  - The backend authenticates the request using the user's token (:doc:`authmanager`).
+  - The backend deletes user records, posts, and associated data from the database (:doc:`server`, :doc:`sqlhandler`).
+  - The frontend logs the user out and navigates to the sign-in page.
+
+- **Logout**:  
+  Logging out calls the `logOut()` method in the engine (:doc:`engine`), which clears authentication data from secure storage using :doc:`authmanager`.
+
+- **Error Handling**:  
+  Any errors returned from the backend during account update or deletion are displayed to the user.
+
 Maintenance
 -----------
 
-### Implementation Details:
+Implementation Details:
 - **State Management**:
   - Uses `_isProfilePublic` and `_notificationsEnabled` state variables
   - State changes propagate via `onProfileVisibilityChanged` callback
@@ -42,90 +64,7 @@ Maintenance
   - Account settings accessed via `AccountSettingsPage` route
   - Uses Flutter's standard navigation stack
 
-API Documentation
------------------
-
-While current implementation uses placeholder logic, typical endpoints would include:
-
-.. code-block:: http
-
-   PATCH /api/settings/profile-visibility
-   Content-Type: application/json
-
-   {"public": true}
-
-   DELETE /api/account
-   Authorization: Bearer <token>
-
-Example Code
-------------
-
-.. code-block:: dart
-
-   class SettingsPage extends StatefulWidget {
-     const SettingsPage({super.key});
-
-     @override
-     State<SettingsPage> createState() => _SettingsPageState();
-   }
-
-   class _SettingsPageState extends State<SettingsPage> {
-     bool _notificationsEnabled = true;
-     bool _isProfilePublic = true;
-
-     @override
-     Widget build(BuildContext context) {
-       return Scaffold(
-         appBar: AppBar(title: const Text('Settings')),
-         body: Column(
-           children: [
-             const Icon(Icons.settings, size: 80),
-             Expanded(
-               child: ListView(
-                 children: [
-                   ListTile(
-                     leading: const Icon(Icons.person),
-                     title: const Text('Account'),
-                     onTap: () => Navigator.push(
-                       context,
-                       MaterialPageRoute(
-                         builder: (_) => AccountSettingsPage(...),
-                       ),
-                     ),
-                   ),
-                   ListTile(
-                     leading: const Icon(Icons.notifications),
-                     title: const Text('Notifications'),
-                     trailing: Switch(
-                       value: _notificationsEnabled,
-                       onChanged: (val) => setState(() => _notificationsEnabled = val),
-                     ),
-                   ),
-                   ListTile(
-                     leading: const Icon(Icons.delete),
-                     title: const Text('Delete Account'),
-                     onTap: () => _confirmDeleteAccount(context),
-                   ),
-                 ],
-               ),
-             ),
-           ],
-         ),
-       );
-     }
-   }
-
-   class AccountSettingsPage extends StatefulWidget {
-     final bool isProfilePublic;
-     final ValueChanged<bool> onProfileVisibilityChanged;
-
-     const AccountSettingsPage({...});
-
-     @override
-     State<AccountSettingsPage> createState() => _AccountSettingsPageState();
-   }
-
-Best Practices
+Features
 --------------
 
 1. **Security**:
@@ -139,18 +78,3 @@ Best Practices
 4. **Validation**:
    - Add loading states for async operations
    - Implement error handling for network requests
-
-Future Improvements
--------------------
-- Add change password functionality
-- Implement two-factor authentication settings
-- Add app theme customization options
-- Include data export functionality
-
-References
-----------
-
-- Flutter State Management Documentation
-- Material Design Settings Guidelines
-- OWASP Mobile Security Guidelines
-
