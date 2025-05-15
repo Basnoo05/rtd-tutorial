@@ -69,7 +69,7 @@ Maintenance – How Does the Software Do What It Does?
   - Easily add more profile fields or post types.
   - Modular helper methods for stats columns.
 
-Best Practices
+Features
 --------------
 
 - **Efficient Data Fetching**: Minimize API calls and use caching where possible.
