@@ -4,7 +4,7 @@ Sign In
 Overview
 --------
 
-The sign-in feature allows existing users to securely access their accounts. This section explains the implementation and usage of the sign-in functionality within the Flutter application.
+The sign-in feature allows users to access their accounts securely. This section explains the implementation and usage of the sign-in function within the Flutter application.
 
 Usage
 -----
@@ -19,7 +19,7 @@ The sign-in page provides a familiar authentication interface with the following
 The sign-in process is structured as follows:
 
 1. **Navigate to the Sign In Page**  
-   Users are presented with the sign-in form on app launch or when authentication is required.
+   Users are presented with the sign-in screen as the app is launched or when authentication is required.
 
 2. **Enter Credentials**  
    Users input their username and password.
@@ -28,7 +28,7 @@ The sign-in process is structured as follows:
    Upon pressing the "Sign In" button, the app validates the credentials using the authentication engine.
 
 4. **Feedback**  
-   If authentication succeeds, the user is redirected to the home page. If it fails, an error message is shown.
+   If authentication is successful, the user is redirected to the home page. If it fails, an error message is shown.
 
 Maintenance
 -----------
