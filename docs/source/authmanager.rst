@@ -90,9 +90,3 @@ Future Improvements
 - Add encryption key rotation support
 - Integrate with OAuth providers
 
-Dependencies
-------------
-
-- ``flutter_secure_storage``: Secure credential storage
-- ``dart:convert``: JWT decoding utilities
-- ``dart:io``: Platform-specific security (indirect)
