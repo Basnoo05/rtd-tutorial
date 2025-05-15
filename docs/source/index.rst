@@ -16,6 +16,7 @@ Contents
    signup
    recovery
    homepage
+   feedpage
    profilepage
    settingspage
    createpostpage
