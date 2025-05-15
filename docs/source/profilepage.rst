@@ -1,4 +1,4 @@
-Profile Page Module
+Profile Page
 ===================
 
 Documentation
