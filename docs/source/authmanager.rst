@@ -65,38 +65,6 @@ Maintenance – How Does the Software Do What It Does?
    - Invalid token format → returns false
    - Expired token → auto-logout
 
-**Interface Comments**
-
-.. code-block:: dart
-
-   /// Manages authentication data storage and validation
-   class AuthManager { ... }
-
-   /// Saves JWT token and UUID to secure storage
-   Future<void> saveAuthData(String token, String uuid)
-
-   /// Retrieves user ID from secure storage
-   Future<String> getUserId()
-
-   /// Validates JWT structure and expiration
-   Future<bool> validateToken(String token)
-
-**Implementation Comments**
-
-.. code-block:: dart
-
-   // JWT validation logic without external dependencies
-   final parts = token.split('.');
-   if (parts.length != 3) return false; // Invalid format
-   
-   // Base64URL normalization for Dart compatibility
-   final normalizedPayload = base64Url.normalize(payload);
-   final decodedPayload = utf8.decode(base64Url.decode(normalizedPayload));
-
-   // Expiration check using Dart's DateTime
-   final exp = payloadMap['exp'] as int;
-   final expirationDate = DateTime.fromMillisecondsSinceEpoch(exp * 1000);
-
 Best Practices
 --------------
 
