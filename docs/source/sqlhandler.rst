@@ -77,19 +77,3 @@ Best Practices
 4. **Error Handling**:
    - Wrap calls in try/catch blocks
    - Handle empty results gracefully
-
-Future Improvements
--------------------
-
-- Add connection pooling
-- Support transactions
-- Add query validation
-- Implement connection retry logic
-- Add migration support
-
-Dependencies
-------------
-
-- ``mysql1``: MySQL database driver
-- ``queries.json``: File containing SQL queries
-- ``dart:io``: File system access for loading queries
