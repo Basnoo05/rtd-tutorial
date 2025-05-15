@@ -21,6 +21,21 @@ Typical user flow:
 4. The user taps the save icon in the app bar.
 5. The updated name and bio are returned to the previous screen.
 
+Backend Integration Details
+--------------------------
+
+- **Profile Update API Call**:  
+  When the user saves changes, the frontend sends the updated name and bio to the backend using the HTTP request handler (:doc:`httprequesthandler`).
+  - The backend validates the input, updates the user record in the database (:doc:`server`, :doc:`sqlhandler`), and returns a success or error response.
+  - The frontend updates the local display and shows a confirmation or error message as appropriate.
+
+- **Security**:  
+  - All profile update requests are authenticated using the user's token, managed by :doc:`authmanager`.
+  - Data is transmitted securely over HTTPS.
+
+- **Error Handling**:  
+  - If the backend returns an error (e.g., invalid input, server error), the frontend displays a message to the user and does not update the profile locally.
+
 Maintenance – How Does the Software Do What It Does?
 ----------------------------------------------------
 
