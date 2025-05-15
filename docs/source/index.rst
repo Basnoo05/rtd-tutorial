@@ -11,7 +11,6 @@ Contents
 .. toctree::
 
    usage
-   api
    signin
    signup
    recovery
