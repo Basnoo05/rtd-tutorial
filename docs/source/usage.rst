@@ -1,7 +1,7 @@
 Usage
 =====
 
-#  Setup
+Setup
 1. Clone the Repo
 ```bash
 git clone https://github.com/studbudz/studbudz.git
