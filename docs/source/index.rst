@@ -28,6 +28,7 @@ Contents
    notifier
    server
    sqlhandler
+   testing
 
 
 
