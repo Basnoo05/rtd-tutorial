@@ -17,7 +17,6 @@ Contents
    recovery
    homepage
    profilepage
-   searchpage
    settingspage
    createpostpage
    editprofilepage
